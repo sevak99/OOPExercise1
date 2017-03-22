@@ -1,15 +1,14 @@
-package com.example.cloths.man_cloths.hat;
+package com.example.cloths.woman_cloths.hat;
 
-import com.example.cloths.man_cloths.ManCloth;
+import com.example.cloths.woman_cloths.WomanCloth;
 
 /**
  * Created by СЕВАК on 20.03.2017.
  */
-public class Hat extends ManCloth {
+public class Hat extends WomanCloth {
 
     private String style;
     private Cap cap;
-
 //    Constructor
     protected Hat(String brand,
                  String color,

@@ -1,15 +1,15 @@
-package com.example.cloths.man_cloths.shoes;
+package com.example.cloths.woman_cloths.shoes;
 
-import com.example.cloths.man_cloths.ManCloth;
+import com.example.cloths.woman_cloths.WomanCloth;
 
 /**
  * Created by СЕВАК on 20.03.2017.
  */
-public class Shoes extends ManCloth{
+public class Shoes extends WomanCloth{
 
     private String season;
     private String style;
-    private  Sneakers sneakers;
+    private Sneakers sneakers;
 
 //    Constructor
     protected Shoes(String brand,

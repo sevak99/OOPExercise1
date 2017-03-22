@@ -1,11 +1,11 @@
-package com.example.cloths.man_cloths.topDress;
+package com.example.cloths.woman_cloths.topDress;
 
-import com.example.cloths.man_cloths.ManCloth;
+import com.example.cloths.woman_cloths.WomanCloth;
 
 /**
  * Created by СЕВАК on 20.03.2017.
  */
-public class TopDress extends ManCloth {
+public class TopDress extends WomanCloth {
 
     private String sleevesStyle;
     private TShirt tShirt;

@@ -7,7 +7,16 @@ import com.example.cloths.Cloth;
  */
 public class WomanCloth extends Cloth {
 
-    public WomanCloth(String brand, String color, int size, double price, String category, String type, String name) {
-        super(brand, color, size, price, category, type, name);
+//    Constructor
+    public WomanCloth(String brand, String color, int size, double price, String type, String name) {
+
+        super(brand, color, size, price, "Woman Cloth", type, name);
+    }
+
+//    Draw
+    @Override
+    protected void draw() {
+
+        super.draw();
     }
 }

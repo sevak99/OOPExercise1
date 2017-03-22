@@ -37,8 +37,8 @@ public class Person {
                 "Age: " + age + "\n" +
                 "Hair Color: " + hairColor + "\n" +
                 "Eye Color: " + eyeColor + "\n" +
-                "Height: " + height + "sm\n" +
-                "Weight: " + weight + "kg\n");
+                "Height: " + height + " sm\n" +
+                "Weight: " + weight + " kg\n");
 
     }
 

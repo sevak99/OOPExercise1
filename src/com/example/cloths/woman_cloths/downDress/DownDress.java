@@ -1,11 +1,11 @@
-package com.example.cloths.man_cloths.downDress;
+package com.example.cloths.woman_cloths.downDress;
 
-import com.example.cloths.man_cloths.ManCloth;
+import com.example.cloths.woman_cloths.WomanCloth;
 
 /**
  * Created by СЕВАК on 20.03.2017.
  */
-public class DownDress extends ManCloth {
+public class DownDress extends WomanCloth {
 
     private Trousers trousers;
 

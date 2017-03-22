@@ -5,15 +5,16 @@ package com.example.cloths;
  */
 public class Cloth {
 
-    public String brand;
-    public String color;
-    public int size;
-    public double price;
-    public String category;
-    public String type;
-    public String name;
+    private String brand;
+    private String color;
+    private int size;
+    private double price;
+    private String category;
+    private String type;
+    private String name;
 
-    public Cloth(String brand, String color, int size, double price, String category, String type, String name) {
+//    Constructor
+    protected Cloth(String brand, String color, int size, double price, String category, String type, String name) {
 
         this.brand = brand;
         this.color = color;
@@ -24,25 +25,48 @@ public class Cloth {
         this.name = name;
     }
 
-    public void draw(){
+//    Draw
+    protected void draw(){
 
-//        System.out.println (
-//                "Brand: " + brand + "\n" +
-//                "Co;or: " + color + "\n" +
-//                "Size: " + size + "\n" +
-//                "Price: " + price + "\n" +
-//                "Category: " + category + "\n" +
-//                "Type: " + type + "\n" +
-//                "Name: " + name + "\n" );
-        System.out.print(
-                String.format("Brand: %s\n", brand) +
-                String.format("Color: %s\n", color) +
-                String.format("Size: %d\n", size) +
-                String.format("Price: %.2f\n", price) +
-                String.format("Category: %s\n", category) +
-                String.format("Type: %s\n", type) +
-                String.format("Name: %s\n", name)
-        );
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append("Brand: ").append(getBrand()).append('\n')
+                .append("Color: ").append(getColor()).append('\n')
+                .append("Size: ").append(getSize()).append('\n')
+                .append("Price: ").append(getPrice()).append('\n')
+                .append("Category: ").append(getCategory()).append('\n')
+                .append("Type: ").append(getType()).append('\n')
+                .append("Name: ").append(getName()).append('\n');
+
+        System.out.print(stringBuilder);
+
     }
 
+    private String getBrand() {
+        return brand;
+    }
+    private String getColor() {
+        return color;
+    }
+    private String getSize() {
+        if(size < 0) {
+            return "Size can not be negative";
+        }
+        return new Integer(size).toString();
+    }
+    private String getPrice() {
+        if(price < 0) {
+            return "Price can not be negative";
+        }
+        return String.format("%.2f", price);
+    }
+    private String getCategory() {
+        return category;
+    }
+    private String getType() {
+        return type;
+    }
+    private String getName() {
+        return name;
+    }
 }
