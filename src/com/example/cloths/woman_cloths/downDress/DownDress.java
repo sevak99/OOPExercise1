@@ -7,40 +7,37 @@ import com.example.cloths.woman_cloths.WomanCloth;
  */
 public class DownDress extends WomanCloth {
 
-    private Trousers trousers;
+    private String material;
 
 //    Constructor
     protected DownDress(String brand,
                         String color,
                         int size,
                         double price,
-                        String name) {
-
+                        String name,
+                        String material) {
 
         super(brand, color, size, price,"Down Dress", name);
-    }
-
-//    Decide Type
-    protected void whatType(Trousers trousers) {
-        this.trousers = trousers;
+        this.material = material;
     }
 
 //    Draw
     protected void draw() {
         System.out.println("Down Dress:");
         super.draw();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Material: ").append(getMaterial()).append('\n');
+        System.out.print(stringBuilder);
     }
 
-//    Print
+    public String getMaterial() {
+        return material;
+    }
+
+    //    Print
     public void print() {
-        if(hasTrousers()) {
-            trousers.draw();
-            return;
+        if(this instanceof Trousers) {
+            ((Trousers) this).draw();
         }
-    }
-
-    private boolean hasTrousers() {
-        if(trousers == null) return false;
-        return true;
     }
 }

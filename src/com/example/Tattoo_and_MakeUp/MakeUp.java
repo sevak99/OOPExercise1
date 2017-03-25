@@ -18,7 +18,7 @@ public class MakeUp {
         stringBuilder.append("Make up:").append('\n')
                 .append("Color Lipstick: ").append(getColorLipstick()).append('\n')
                 .append('\n');
-        System.out.println(stringBuilder);
+        System.out.print(stringBuilder);
     }
 
     public String getColorLipstick() {

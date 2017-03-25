@@ -1,11 +1,14 @@
 package com.example;
 
+import com.example.Shop.Shop;
 import com.example.Tattoo_and_MakeUp.MakeUp;
 import com.example.cloths.Cloth;
 import com.example.cloths.man_cloths.downDress.Trousers;
 import com.example.cloths.man_cloths.hat.Cap;
+import com.example.cloths.man_cloths.shoes.Shoes;
 import com.example.cloths.man_cloths.shoes.Sneakers;
 import com.example.cloths.man_cloths.topDress.TShirt;
+import com.example.cloths.woman_cloths.downDress.Skirt;
 import com.example.persons.Man;
 import com.example.persons.Woman;
 import com.example.pets.Cat;
@@ -17,30 +20,31 @@ import com.example.pets.Dog;
 public class Main {
 
     public static void main(String[] args) {
-
-        Man man1 = new Man(
-                "James",
-                "Bond",
-                40,
-                "Black",
-                "Brown",
-                178,
-                75);
-
-        Woman woman = new Woman(
-                "Ann",
-                "Tomson",
-                35,
-                "Brown",
-                "Black",
-                170,
-                64);
+//
+//        Man man1 = new Man(
+//                "James",
+//                "Bond",
+//                40,
+//                "Black",
+//                "Brown",
+//                178,
+//                75);
+//
+//        Woman woman = new Woman(
+//                "Ann",
+//                "Tomson",
+//                35,
+//                "Brown",
+//                "Black",
+//                170,
+//                64);
 
         Trousers trousers = new Trousers(
                 "Pull & Bear",
                 "Blue",
                 38,
                 20000,
+                "Jeans",
                 "Slim Fit"
         );
 
@@ -49,7 +53,7 @@ public class Main {
                 "White",
                 95,
                 8000,
-                "Short Sleeves"
+                "Short"
         );
 
         Sneakers sneakers = new Sneakers(
@@ -65,55 +69,112 @@ public class Main {
                 "Puma",
                 "Blue",
                 12,
+                -22000,
+                "Modern. With printings"
+        );
+
+        Cap cap1 = new Cap(
+                "Puma",
+                "Blue",
+                12,
                 22000,
                 "Modern. With printings"
         );
 
-        Dog dog = new Dog(
-                "Rex",
-                3,
-                false,
-                true,
-                false
+        Skirt skirt = new Skirt(
+                "Brand",
+                "Blue",
+                11,
+                20000,
+                "Jeans",
+                "Maxi"
         );
 
-        Cat cat = new Cat(
-                "Kuzya",
-                2,
-                true,
-                "Green"
+        TShirt tShirt1 = new TShirt(
+                "Brand",
+                "Red",
+                93,
+                9000,
+                "Long"
         );
 
-        man1.setShoes(sneakers);
-        man1.setDownDress(trousers);
-        man1.setHat(cap);
-        man1.setPet(cat);
+        Shop shop = new Shop(15);
 
-        man1.draw();
-        man1.goOut();
+        shop.printPrice();
+        shop.printNamesOfCloths();
 
-        woman.setShoes(sneakers);
-        woman.setDownDress(trousers);
-        woman.setTopDress(tShirt);
-        woman.setPet(dog);
+        shop.setCloth(trousers);
+        shop.setCloth(tShirt);
+        shop.setCloth(sneakers);
 
-        woman.draw();
-        woman.goOut();
+        shop.printNamesOfCloths();
 
-        MakeUp makeUp = new MakeUp(
-                "Red"
-        );
+        shop.setCloth(cap);
 
-        woman.setMakeUp(makeUp);
+        shop.printNamesOfCloths();
 
-        woman.draw();
-        woman.goOut();
+        shop.setCloth(skirt);
+        shop.setCloth(tShirt1);
+        shop.setCloth(sneakers);
 
-        man1.setPet(dog);
-        man1.setTopDress(tShirt);
+        shop.printPrice();
+        shop.printNamesOfCloths();
 
-        man1.draw();
-        man1.goOut();
+        shop.delete(tShirt);
+        shop.delete(skirt);
+
+        shop.setCloth(cap1);
+
+        shop.printPrice();
+        shop.printNamesOfCloths();
+
+
+
+//        Dog dog = new Dog(
+//                "Rex",
+//                3,
+//                false,
+//                true,
+//                false
+//        );
+//
+//        Cat cat = new Cat(
+//                "Kuzya",
+//                2,
+//                true,
+//                "Green"
+//        );
+//
+//        man1.setShoes(sneakers);
+//        man1.setDownDress(trousers);
+//        man1.setHat(cap);
+//        man1.setPet(cat);
+//
+//        man1.draw();
+//        man1.goOut();
+//
+//        woman.setShoes(sneakers);
+//        woman.setDownDress(trousers);
+//        woman.setTopDress(tShirt);
+//        woman.setPet(dog);
+//
+//        woman.draw();
+//        woman.goOut();
+//
+//        MakeUp makeUp = new MakeUp(
+//                "Red"
+//        );
+//
+//        woman.setMakeUp(makeUp);
+//
+//        woman.draw();
+//        woman.goOut();
+//
+//        man1.setPet(dog);
+//        man1.setTopDress(tShirt);
+//
+//        man1.draw();
+//        man1.goOut();
 
     }
 }

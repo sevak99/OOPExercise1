@@ -9,7 +9,6 @@ public class Shoes extends ManCloth{
 
     private String season;
     private String style;
-    private  Sneakers sneakers;
 
 //    Constructor
     protected Shoes(String brand,
@@ -25,24 +24,31 @@ public class Shoes extends ManCloth{
         this.style = style;
     }
 
-//    Decide Type
-    protected void whatType(Sneakers sneakers) {
-        this.sneakers = sneakers;
-    }
-
 //    Draw
     protected void draw() {
         System.out.println("Shoes:");
         super.draw();
-        System.out.print(
-                String.format("Season: %s\n", season) +
-                String.format("Style: %s\n\n", style));
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Season: ").append(getSeason()).append('\n')
+                .append("Style: ").append(getStyle()).append('\n')
+                .append('\n');
+
+        System.out.print(stringBuilder);
     }
 
-//    Print
+    private String getSeason() {
+        return season;
+    }
+
+    private String getStyle() {
+        return style;
+    }
+
+    //    Print
     public void print() {
-        if(sneakers != null) {
-            sneakers.draw();
+        if(this instanceof Sneakers) {
+            ((Sneakers) this).draw();
         }
     }
 }

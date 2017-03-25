@@ -11,8 +11,6 @@ public class Cat extends Pet {
     public Cat(String name, int age, boolean gender, String eyeColor) {
         super(name, age, gender);
         this.eyeColor = eyeColor;
-
-        whatPet(this);
     }
 
 //    Draw

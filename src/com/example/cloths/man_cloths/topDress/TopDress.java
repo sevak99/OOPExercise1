@@ -7,9 +7,6 @@ import com.example.cloths.man_cloths.ManCloth;
  */
 public class TopDress extends ManCloth {
 
-    private String sleevesStyle;
-    private TShirt tShirt;
-
 //    Constructor
     protected TopDress(String brand,
                  String color,
@@ -19,27 +16,21 @@ public class TopDress extends ManCloth {
                  String sleevesStyle) {
 
         super(brand, color, size, price, "Top Dress", name);
-        this.sleevesStyle = sleevesStyle;
-    }
 
-//    Decide Type
-    protected void whatType(TShirt tShirt) {
-        this.tShirt = tShirt;
     }
 
 //    Draw
     protected void draw() {
         System.out.println("Top Dress:");
         super.draw();
-        System.out.print(
-                String.format("Sleeves Style: %s\n\n", sleevesStyle));
     }
 
-//    Print
+
+
+    //    Print
     public void print() {
-        if(tShirt != null) {
-            tShirt.draw();
-            return;
+        if(this instanceof TShirt) {
+            ((TShirt) this).draw();
         }
     }
 }

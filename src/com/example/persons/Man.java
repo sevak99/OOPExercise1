@@ -45,9 +45,13 @@ public class Man extends Person {
         if(tattoo == null) {
             System.out.println("Has Tattoo: No\n");
         } else tattoo.draw();
-
-        pet.print(alreadyHavePet);
-
+        if(pet == null) {
+            System.out.println("Pet: No pet");
+        } else {
+            if(alreadyHavePet)
+                System.out.println("Pet: You already have one pet. You can not keep more than one pet\n");
+            pet.print();
+        }
     }
 
 //    Setters

@@ -13,8 +13,6 @@ public class Dog extends Pet {
         super(name, age, gender);
         this.isFighting = isFighting;
         this.areEarsCut = areEarsCut;
-
-        whatPet(this);
     }
 
 //    Draw

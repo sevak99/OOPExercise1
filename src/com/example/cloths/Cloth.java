@@ -33,7 +33,7 @@ public class Cloth {
         stringBuilder.append("Brand: ").append(getBrand()).append('\n')
                 .append("Color: ").append(getColor()).append('\n')
                 .append("Size: ").append(getSize()).append('\n')
-                .append("Price: ").append(getPrice()).append('\n')
+                .append("Price: ").append(getPriceInString()).append('\n')
                 .append("Category: ").append(getCategory()).append('\n')
                 .append("Type: ").append(getType()).append('\n')
                 .append("Name: ").append(getName()).append('\n');
@@ -54,10 +54,10 @@ public class Cloth {
         }
         return new Integer(size).toString();
     }
-    private String getPrice() {
-        if(price < 0) {
-            return "Price can not be negative";
-        }
+    private String getPriceInString() {
+
+        if(getPrice() == -1)
+            System.out.print("Price can not be negative");
         return String.format("%.2f", price);
     }
     private String getCategory() {
@@ -66,7 +66,13 @@ public class Cloth {
     private String getType() {
         return type;
     }
-    private String getName() {
+    public String getName() {
         return name;
+    }
+
+    public double getPrice() {
+        if(price < 0)
+            return -1;
+        return price;
     }
 }

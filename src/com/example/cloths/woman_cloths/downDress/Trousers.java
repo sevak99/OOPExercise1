@@ -8,19 +8,23 @@ public class Trousers extends DownDress {
     private String fit;
 
 //    Constructor
-    public Trousers(String brand, String color, int size, double price, String fit) {
+    public Trousers(String brand, String color, int size, double price, String material, String fit) {
 
-        super(brand, color, size, price,"Trousers");
+        super(brand, color, size, price,"Trousers", material);
         this.fit = fit;
-        whatType(this);
     }
 
 //    Draw
     @Override
     protected void draw() {
         super.draw();
-        System.out.print(
-                String.format("Style: %s\n\n", fit));
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Fit: ").append(getFit()).append('\n')
+                .append('\n');
+        System.out.print(stringBuilder);
     }
 
+    private String getFit() {
+        return fit;
+    }
 }

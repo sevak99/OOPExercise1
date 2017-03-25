@@ -9,13 +9,16 @@ public class Sneakers extends Shoes {
     public Sneakers(String brand, String color, int size, double price, String season, String style) {
 
         super(brand, color, size, price, "Sneakers", season, style);
-
-        whatType(this);
     }
 
 //    Draw
     @Override
     protected void draw() {
         super.draw();
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append('\n');
+
+        System.out.print(stringBuilder);
     }
 }

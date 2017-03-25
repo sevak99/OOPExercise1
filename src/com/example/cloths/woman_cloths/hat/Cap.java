@@ -9,13 +9,16 @@ public class Cap extends Hat {
     public Cap(String brand, String color, int size, double price, String style) {
 
         super(brand, color, size, price, "Cap", style);
-
-        whatType(this);
     }
 
 //    Draw
     @Override
     protected void draw() {
         super.draw();
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append('\n');
+
+        System.out.print(stringBuilder);
     }
 }

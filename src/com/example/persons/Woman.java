@@ -39,8 +39,12 @@ public class Woman extends Person {
         this.topDress = topDress;
     }
     public void setPet(Pet pet) {
-        if(this.pet == null) { this.pet = pet; }
-        else { alreadyHavePet = true; }
+        if(this.pet == null) {
+            this.pet = pet;
+        }
+        else {
+            alreadyHavePet = true;
+        }
     }
     public void setMakeUp(MakeUp makeUp) { this.makeUp = makeUp; }
 
@@ -63,8 +67,13 @@ public class Woman extends Person {
         if(makeUp == null) {
             System.out.println("Make up: No make up\n");
         } else makeUp.draw();
-
-        pet.print(alreadyHavePet);
+        if(pet == null) {
+            System.out.println("Pet: No pet");
+        } else {
+            if(alreadyHavePet)
+                System.out.println("Pet: You already have one pet. You can not keep more than one pet\n");
+            pet.print();
+        }
     }
 
 //    Go Out

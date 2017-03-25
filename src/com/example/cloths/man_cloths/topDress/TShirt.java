@@ -5,16 +5,29 @@ package com.example.cloths.man_cloths.topDress;
  */
 public class TShirt extends TopDress {
 
+    private String sleevesStyle;
+
 //    Constructor
     public TShirt(String brand, String color, int size, double price, String sleevesStyle) {
         super(brand, color, size, price, "T-Shirt", sleevesStyle);
 
-        whatType(this);
+        this.sleevesStyle = sleevesStyle;
     }
 
 //    Draw
     @Override
     protected void draw() {
         super.draw();
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Sleeves Style: ").append(getSleevesStyle()).append('\n')
+                .append('\n');
+        System.out.print(stringBuilder);
+
+        System.out.print(stringBuilder);
+    }
+
+    public String getSleevesStyle() {
+        return sleevesStyle;
     }
 }

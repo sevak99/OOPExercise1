@@ -8,7 +8,6 @@ import com.example.cloths.man_cloths.ManCloth;
 public class Hat extends ManCloth {
 
     private String style;
-    private Cap cap;
 
 //    Constructor
     protected Hat(String brand,
@@ -22,29 +21,23 @@ public class Hat extends ManCloth {
         this.style = style;
     }
 
-//    Decide Type
-    protected void whatType(Cap cap) {
-        this.cap = cap;
-    }
-
 //    Draw
     protected void draw() {
         System.out.println("Hat:");
         super.draw();
-        System.out.print(
-                String.format("Style: %s\n\n", style));
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Style: ").append(getStyle()).append('\n');
+        System.out.print(stringBuilder);
     }
 
-//    Print
+    public String getStyle() {
+        return style;
+    }
+
+    //    Print
     public void print() {
-        if(hasCap()) {
-            cap.draw();
-            return;
+        if(this instanceof Cap) {
+            ((Cap) this).draw();
         }
-    }
-
-    private boolean hasCap() {
-        if(cap == null) return false;
-        return true;
     }
 }

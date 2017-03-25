@@ -8,52 +8,30 @@ public class Pet {
     private String name;
     private int age;
     private boolean male;
-    private Cat cat;
-    private Dog dog;
     private String _pet;
 
 //    Constructor
     protected Pet(String name, int age, boolean gender) {
-        if(this.dog != null) {
-            System.out.println("You already have one pet. You can not keep more than one pet");
-        }
-       // whatPet();
         this.name = name;
         this.age = age;
         this.male = gender;
     }
 
-
-    protected void whatPet(Cat cat) {
-        if(this.dog != null) {
-            System.out.println("You already have one pet. You can not keep more than one pet");
-        }
-        this.cat = cat;
-        _pet = "Cat";
-    }
-    protected void whatPet(Dog dog) {
-        if(this.cat != null) {
-            System.out.println("You already have one pet. You can not keep more than one pet");
-        }
-        this.dog = dog;
-        _pet = "Dog";
-    }
 //    Print
-    public void print(boolean havePet) {
-        if(havePet) {
-            System.out.println("Pet: You already have one pet. You can not keep more than one pet\n");
-        }
-        if(cat != null) {
-            cat.draw();
-        } else if (dog != null) {
-            dog.draw();
-        } else {
-            System.out.println("Pet: No pet\n");
-        }
+    public void print() {
 
+        if(this instanceof Cat) {
+            _pet = "Cat";
+            ((Cat) this).draw();
+        }
+        if(this instanceof Dog) {
+            _pet = "Dog";
+            ((Dog) this).draw();
+        }
     }
 
 //    Draw
+
     protected void draw() {
 
         StringBuilder stringBuilder = new StringBuilder();
